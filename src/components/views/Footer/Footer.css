@@ -1,0 +1,28 @@
+/* 가장 앞에 있는 className에 디자인을 주기로 */
+
+.my-5 {
+  max-width: 100% !important;
+  margin: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.text-center {
+  background-color: #eceff1;
+}
+
+.text-center > .d-flex {
+  background-color: #21d192;
+}
+
+.col-md-2 > .mb-4,
+.col-md-3 > .mb-4,
+.col-md-4 > .mb-4 {
+  width: 60px;
+  background-color: #7c4dff;
+  height: 2px;
+}
+
+.p-3 {
+  background-color: rgba(0, 0, 0, 0.2);
+}

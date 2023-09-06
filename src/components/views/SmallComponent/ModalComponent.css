@@ -1,0 +1,254 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal button {
+  outline: none;
+  cursor: pointer;
+  border: 0;
+}
+/* section height 조절 */
+.modal > section {
+  min-width: 400px;
+  max-width: 600px;
+  min-height: 260px;
+  max-height: 500px;
+  overflow: auto;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-show 0.3s;
+  justify-content: center;
+}
+
+/* 로그인 팝업창 폭 */
+.Login {
+  min-width: 600px;
+}
+
+.Hobby {
+  min-width: 600px;
+}
+
+.modal > section > header {
+  position: relative;
+  padding: 16px 64px 16px 16px;
+  background-color: #f1f1f1;
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.modal > section > header button {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  width: 30px;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: #999;
+  background-color: transparent;
+}
+.modal > section > main {
+  padding: 16px;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+}
+.modal > section > footer {
+  padding: 12px 16px;
+  text-align: right;
+}
+.modal > section > footer button {
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #6c757d;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal.openModal {
+  display: flex;
+  align-items: center;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-bg-show 0.3s;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 취미 버튼 */
+.btn-hover {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  height: 35px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 15px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.pink {
+  background-image: linear-gradient(
+    to right,
+    #ed6ea0,
+    #ec8c69,
+    #f7186a,
+    #fbb03b
+  );
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+/* 버튼 */
+.buttonContainer {
+  text-align: center;
+}
+
+/* 취미 버튼 */
+.hobbyButton {
+  width: 338px;
+  height: 50px;
+  margin-top: 30px;
+  margin-left: 0;
+  border-radius: 0.33rem;
+}
+
+/* 로그인 버튼 */
+.loginButton {
+  width: 100px;
+}
+
+/* 다음 버튼 */
+.nextButton {
+  margin-top: 20px;
+}
+
+/* 예 아니오 버튼 */
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.yesButton,
+.noButton {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  height: 30px;
+  width: 80px;
+  justify-content: center;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.yesButton {
+  margin-right: 20px;
+}
+
+.yesButton:active,
+.noButton:active {
+  outline: 0;
+}
+
+.yesButton:hover,
+.noButton:hover {
+  outline: 0;
+}
+
+.yesButton span,
+.noButton span {
+  transition: all 200ms;
+}
+
+.yesButton:hover span,
+.noButton:hover span {
+  transform: scale(0.9);
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 991px) {
+  .yesButton,
+  .noButton {
+    font-size: 15px;
+    height: 30px;
+  }
+
+  .yesButton span,
+  .noButton span {
+    line-height: 50px;
+  }
+}
+
+/* x로 닫는 버튼 */
+.close {
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #6c757d;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+/* 예 버튼 underline 없앰 */
+.Msg {
+  text-decoration: none;
+}

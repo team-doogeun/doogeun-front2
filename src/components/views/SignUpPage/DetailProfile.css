@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "titleFont";
+  src: url("../../../fonts/SingleDay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "priority";
+  src: url("../../../fonts/GmarketSansTTFBold.ttf");
+}
+
+/* DetailProfile */
+.DetailProfileForm {
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Input Text(입력란) */
+.DetailProfileInputs {
+  width: 100%;
+  height: inherit;
+}
+
+.InputParts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.DetailProfilePart {
+  max-width: 338px;
+  margin-right: 60px;
+}
+
+.IdealProfilePart {
+  max-width: 338px;
+  margin-left: 60px;
+}
+
+.title,
+.height,
+.bodyType,
+.age,
+.address,
+.department,
+.character1,
+.character2,
+.mbti,
+.drink,
+.smoke,
+.firstPriority,
+.imgFile {
+  margin-top: 30px;
+}
+
+.title {
+  font-family: "titleFont";
+  font-size: 24px;
+  text-align: center;
+}
+
+/* message */
+.message {
+  display: flex;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.gd {
+  width: 150px;
+}
+
+/* footer Button */
+.nextButton {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* pageButton */
+.PageButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.PageButtonForm > button {
+  justify-content: center;
+  margin: 20px auto;
+}
+
+/* imgFile */
+.imgFile {
+  display: none;
+  /* 기존 input 요소를 숨깁니다 */
+}
+
+.custom-file-upload {
+  width: 220px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #ff426f; /* 버튼 색 */
+  border: none;
+  color: white; /* 텍스트 색 */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.custom-file-upload:hover {
+  background-color: #ff426f; /* 마우스 오버시 버튼 색 */
+  color: white; /* 마우스 오버시 텍스트 색 */
+  transform: scale(1.05);
+}

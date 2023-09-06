@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "titleFont";
+  src: url("../../../fonts/SingleDay-Regular.ttf");
+}
+
+.MyProfilePage {
+  display: flex;
+  margin-top: 300px;
+  width: 400px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+/* flex-direction:column이 기본설정 */
+.MyProfileForm {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.title {
+  font-family: "titleFont";
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Input Text(입력란) */
+.MyProfileInputs {
+  height: inherit;
+  margin-top: 10px;
+}
+
+.MyProfileInputs > input {
+  margin-top: 30px;
+}
+
+/* message */
+.message {
+  display: flex;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+/* gender - Button */
+.genderContainer {
+  margin-top: 25px;
+}
+.marginBetween {
+  display: inline-block;
+  width: 20px;
+}
+
+/* dropdown */
+/* select 화살표 없애기 */
+.ageDropDown {
+  margin-top: 15px;
+  position: relative;
+  width: 150px;
+  height: 35px;
+  border: none;
+}
+
+/* kakaoID */
+.kakaoIDMsg {
+  display: flex;
+  margin-top: 3px;
+  color: rgb(197, 30, 197);
+  white-space: pre-wrap;
+  font-weight: 500;
+}
+
+/* footer Button */
+.nextButton {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footerButton {
+  width: 132px;
+  height: 50px;
+  color: #ffffff;
+  border-radius: 0.33rem;
+  background-color: palevioletred;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+/* 성별 버튼 */
+.genBtn {
+  background-image: none;
+}
