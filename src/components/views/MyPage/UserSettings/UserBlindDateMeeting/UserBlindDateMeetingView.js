@@ -54,7 +54,7 @@ const UserBlindDateMeetingView = () => {
   // 최종매치 유저
   const getBlindDateMatches = async () => {
     const response = await axios
-      .get(`http://localhost:8080/mypage/${userId}/finalMatches`, {
+      .get(`http://${process.env.REACT_APP_SERVER_IP}/mypage/${userId}/finalMatches`, {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((res) => {
@@ -69,7 +69,7 @@ const UserBlindDateMeetingView = () => {
 
   const getMeetingHost = async () => {
     const response = await axios
-      .get(`http://localhost:8080/mypage/group/${userId}/my-rooms`, {
+      .get(`http://${process.env.REACT_APP_SERVER_IP}/mypage/group/${userId}/my-rooms`, {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((res) => {
@@ -85,7 +85,7 @@ const UserBlindDateMeetingView = () => {
 
   const getMeetingRegister = async () => {
     const response = await axios
-      .get(`http://localhost:8080/mypage/group/${userId}/entering`, {
+      .get(`http://${process.env.REACT_APP_SERVER_IP}/mypage/group/${userId}/entering`, {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((res) => {
@@ -100,7 +100,7 @@ const UserBlindDateMeetingView = () => {
 
   const getMeetingHostStart = async () => {
     const response = await axios
-      .get(`http://localhost:8080/mypage/group/${userId}/achieve`, {
+      .get(`http://${process.env.REACT_APP_SERVER_IP}/mypage/group/${userId}/achieve`, {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((res) => {

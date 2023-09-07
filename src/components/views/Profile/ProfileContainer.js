@@ -8,9 +8,9 @@ const ProfileContainer = ({ profileImageUrl }) => {
   const navigator = useNavigate();
   const userName = getJWTCookie('name');
 
-  // 로그아웃 url은?
   const logoutHandler = async () => {
     clearAllCookies();
+    localStorage.clear();
     window.location.reload();
   };
 
