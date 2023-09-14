@@ -4,14 +4,12 @@ import { Link } from "react-scroll";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import BottomImage from "../../../Img/BottomImage.png";
 import blindDatePicture from "../../../Img/blindDate_Picture.png";
 import { createGlobalStyle } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import banner1 from "../../../Img/banner1.png";
 import banner2 from "../../../Img/banner2.png";
 import banner3 from "../../../Img/banner3.png";
-import RoomDataView from "../MeetingPage/MeetingRoomData/RoomDataView";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -145,7 +143,7 @@ const HomePage = () => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.1, // Adjusted threshold value
+      threshold: 0.1,
     };
 
     const observer = new IntersectionObserver(handleIntersection, options);
@@ -409,33 +407,6 @@ const SectionTwo = styled.section`
   }
 `;
 
-const SectionThree = styled.section`
-  position: relative;
-  left: 0;
-  width: 100vw;
-  min-height: 60vh;
-  display: flex;
-  background-image: url(${BottomImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 0;
-
-  h2 {
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
-    font-size: 2rem;
-    color: #252525;
-    margin-bottom: 30px;
-  }
-
-  p {
-    color: #252525;
-  }
-`;
-
 const ScrollToTop = styled.div`
   position: fixed;
   width: 100%;
@@ -475,16 +446,6 @@ const SectionTwoLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-`;
-
-const SectionTwoRightContainer = styled.div`
-  display: flex;
-`;
-
-const MeetingImg = styled.img`
-  max-width: 400px;
-  max-height: 200px;
-  margin-right: 40px;
 `;
 
 const BlindDateButton = styled.span`

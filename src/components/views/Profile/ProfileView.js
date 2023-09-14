@@ -12,25 +12,25 @@ const ProfileView = ({ logoutHandler, userName, navigator }) => {
             <ProfilePhoto
               src={profileImage}
               type="button"
-              onClick={() => navigator("/my-page")}
+              onClick={() => navigator("/mypage")}
               alt="ProfilePhoto"
               style={{ borderRadius: "4px" }}
             />
           </ProfilePhotoWrapper>
           <UserNicknameWrapper
             type="button"
-            onClick={() => navigator("/my-page")}
+            onClick={() => navigator("/mypage")}
           >
             {userName}님
           </UserNicknameWrapper>
         </UserInfo>
         <ProfileMenuWrapper>
-          <ProfileMenu onClick={() => navigator("/my-page/blindDate/toLike")}>
+          <ProfileMenu onClick={() => navigator("/mypage/blindDate")}>
             내 소개팅
           </ProfileMenu>
           <ProfileMenu
             type="button"
-            onClick={() => navigator("/my-page/meeting/my-rooms")}
+            onClick={() => navigator("/mypage/meeting")}
           >
             내 미팅
           </ProfileMenu>

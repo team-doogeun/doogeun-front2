@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import GmarketSansTTFBold from './fonts/GmarketSansTTFBold.ttf';
 import HomePage from './components/views/HomePage/HomePage';
 import BlindDatePage from './components/views/BlindDatePage/BlindDateContainer';
-import MeetingPage from './components/views/MeetingPage/MeetingPageFirst/MeetingPageSelectContainer';
 import MyProfile from './components/views/SignUpPage/MyProfile';
 import DetailProfile from './components/views/SignUpPage/DetailProfile';
 import FindPasswordContainer from './components/views/FindPassword/FindPasswordContainer';
 import PageNotFound from './components/views/PageNotFound/PageNotFound';
 import MeetingPageSelectContainer from './components/views/MeetingPage/MeetingPageFirst/MeetingPageSelectContainer';
 import PrivateRoute from './PrivateRoute';
-import UserBlindDateMeetingView from './components/views/MyPage/UserSettings/UserBlindDateMeeting/UserBlindDateMeetingView';
 import UserPageMainContainer from './components/views/UserPage/UserPageMain/UserPageMainContainer';
 import UserPageBlindDateContainer from './components/views/UserPage/UserPageBlindDate/UserPageBlindDateContainer';
+import UserPageMeetingContainer from './components/views/UserPage/UserPageMeeting/UserPageMeetingContainer';
+import FirstPage from './components/views/SignUpPage/FirstPage';
+import VerificationPage from './components/views/SignUpPage/VerificationPage';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -53,6 +54,8 @@ function App() {
               </PrivateRoute>
             }
           ></Route>
+          <Route path='/signup' element={<FirstPage />}></Route>
+          <Route path='/verification' element={<VerificationPage />}></Route>
           <Route path="/myprofile" element={<MyProfile />}></Route>
           <Route path="/detailprofile" element={<DetailProfile />}></Route>
           <Route path="/find" element={<FindPasswordContainer />} />
@@ -79,26 +82,10 @@ function App() {
           />
           {/* 미팅방 */}
           <Route
-            path="/my-page/meeting/my-rooms"
+            path="/mypage/meeting"
             element={
               <PrivateRoute>
-                <UserBlindDateMeetingView />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/my-page/meeting/entering"
-            element={
-              <PrivateRoute>
-                <UserBlindDateMeetingView />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/my-page/meeting/achieve"
-            element={
-              <PrivateRoute>
-                <UserBlindDateMeetingView />
+                <UserPageMeetingContainer />
               </PrivateRoute>
             }
           />

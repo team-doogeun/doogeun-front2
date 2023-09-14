@@ -86,6 +86,7 @@ const MypageSidemenuView = ({
         >
           <Sidemenu
             fontColor={currentMenu === "MyMeeting" ? "#ff2559" : "#737373"}
+            onClick={() => navigate('/mypage/meeting')}
           >
             미팅
           </Sidemenu>

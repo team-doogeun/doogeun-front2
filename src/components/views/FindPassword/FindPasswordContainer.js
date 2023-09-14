@@ -12,13 +12,6 @@ const FindPasswordContainer = () => {
   const url = 'http://localhost:8080/find-password';
   const submitEmail = async () => {
     try {
-      // await axios.get(url, {
-      //   // request body 해당
-      // }).then(()=>{
-      //   navigator('/');
-      // })
-
-      // 요청 후 홈페이지로
       navigator('/');
     } catch (error) {
       console.log(error);

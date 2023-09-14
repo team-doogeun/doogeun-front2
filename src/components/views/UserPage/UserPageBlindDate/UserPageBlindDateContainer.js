@@ -8,7 +8,8 @@ const UserPageBlindDateContainer = () => {
     const [toLikeUser, setToLikeUser] = useState([]);
     const [fromLikeUser, setFromLikeUser] = useState([]);
     const [matchUser, setMatchUser] = useState([])
-
+    const [selectedUserId, setSelectedUserId] = useState(null); // Track the selected user for chatting
+    const [roomId, setRoomId] = useState(null);
 
     const userId = getJWTCookie("userId");
     const authToken = getJWTCookie("jwtAccessToken");
@@ -19,7 +20,6 @@ const UserPageBlindDateContainer = () => {
             headers: { Authorization: `Bearer ${authToken}` },
           })
           .then((res) => {
-            console.log(res.data);
             setToLikeUser(res.data);
             console.log(setToLikeUser);
         })
@@ -36,7 +36,6 @@ const UserPageBlindDateContainer = () => {
             headers: { Authorization: `Bearer ${authToken}` },
           })
           .then((res) => {
-            console.log(res.data);
             setFromLikeUser(res.data);
         })
           .catch((err) => {
@@ -61,6 +60,49 @@ const UserPageBlindDateContainer = () => {
         return response;
       };
 
+      const handleDooeun = async (targetUserId) => {
+        await axios
+          .post(
+            `http://${process.env.REACT_APP_SERVER_IP}/mypage/blindDate/fromLike/like`,
+            {
+              userId: userId,
+              targetUserId: targetUserId,
+            },
+            {
+              headers: { Authorization: `Bearer ${authToken}` },
+            }
+          )
+          .then((res) => {
+            console.log(`${userId} -> ${targetUserId}`);
+            return res;
+          })
+          .catch((err) => {
+            console.log("내게 호감표시한 유저들 에러 :", err);
+          });
+      };
+
+      const handleChating = async (targetUserId) => {
+        await axios
+        .post(
+          `http://${process.env.REACT_APP_SERVER_IP}/finalMatch/personalChat`,
+          {
+            userId: userId,
+            anotherUserId: targetUserId
+          },
+          {
+            headers: { Authorization: `Bearer ${authToken}` },
+          }
+        )
+        .then((res)=> {
+          console.log(res.data);
+          setSelectedUserId(targetUserId);
+          setRoomId(res.data.chatRoomId);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      };
+
       useEffect(() => {
         getBlindDateToLike();
         getBlindDatefromLike();
@@ -68,7 +110,7 @@ const UserPageBlindDateContainer = () => {
       }, [])
 
   return (
-    <UserPageBlindDateView toLikeUser={toLikeUser} fromLikeUser={fromLikeUser} matchUser={matchUser}/>
+    <UserPageBlindDateView toLikeUser={toLikeUser} fromLikeUser={fromLikeUser} matchUser={matchUser} handleDooeun={handleDooeun} handleChating={handleChating} selectedUserId={selectedUserId} roomId={roomId} userId={userId}/>
     )
 }
 

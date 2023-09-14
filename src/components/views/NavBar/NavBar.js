@@ -69,7 +69,7 @@ function NavBar() {
             <>
               <RegisterButton
                 onClick={() => {
-                  navigator("/myprofile");
+                  navigator("/signup");
                 }}
               >
                 회원가입
