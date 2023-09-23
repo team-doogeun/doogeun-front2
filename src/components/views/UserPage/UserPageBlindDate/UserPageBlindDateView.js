@@ -86,7 +86,7 @@ const UserPageBlindDateView = ({ toLikeUser, fromLikeUser, matchUser, handleDooe
             }
              {
                 isChatOpen && selectedUserId && (
-                    <Chat userId={userId} targetId={selectedUserId} roomId={roomId} onClose={closeChat} isChatOpen={isChatOpen}/>
+                    <Chat userId={userId} targetId={selectedUserId} onClose={closeChat} isChatOpen={isChatOpen}/>
                     )
             }
 
@@ -103,12 +103,13 @@ const UserPageBlindDateViewContainer = styled.div`
     margin: 0 auto;
 `;
 
-const Title = styled.h3`
+const Title = styled.h4`
+    font-family: "NanumSquareRoundExtraBold";
     margin-bottom: 20px;
 `
 
 const ToLikeContainer = styled.div`
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundBold";
     display: flex;
     flex-direction: column;
     border: 2px solid #e9e9e9;
@@ -122,7 +123,7 @@ const ToLikeContainer = styled.div`
 `;
 
 const FromLikeContainer = styled.div`
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundBold";
     display: flex;
     flex-direction: column;
     border: 2px solid #e9e9e9;
@@ -135,7 +136,7 @@ const FromLikeContainer = styled.div`
 `
 
 const MatchContainer = styled.div`
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundBold";
     display: flex;
     flex-direction: column;
     border: 2px solid #e9e9e9;
@@ -205,6 +206,7 @@ const ButtonWrapper = styled.div`
 `
 
 const InfoButton = styled.button`
+    font-family: "NanumSquareRoundExtraBold";
     border: none;
     padding: 8px 15px;
     border-radius: 10px;
@@ -214,6 +216,7 @@ const InfoButton = styled.button`
 `;
 
 const DoogeunButton = styled.button`
+    font-family: "NanumSquareRoundExtraBold";
     border: none;
     padding: 8px 15px;
     border-radius: 10px;
@@ -223,6 +226,7 @@ const DoogeunButton = styled.button`
 `;
 
 const ChatingButton = styled.button`
+    font-family: "NanumSquareRoundExtraBold";
     border: none;
     padding: 8px 15px;
     border-radius: 10px;
@@ -230,26 +234,6 @@ const ChatingButton = styled.button`
     color: #f3f3f3;
 `;
 
-const ModalBackground = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;  // ensure modal appears on top of other elements
-`;
 
-const ChatModalContainer = styled.div`
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
-    max-height: 80%;
-    overflow: auto;
-`;
 
 export default UserPageBlindDateView

@@ -322,17 +322,6 @@ function MyProfile(props) {
           />
           </AgeContainer>
           </GenderAndAge>
-          <Input
-            onChange={onEmailHandler}
-            type="text"
-            placeholder="@konkuk.ac.kr"
-            value={email}
-          ></Input>
-          {email.length > 0 && (
-            <div className={`message ${isEmail ? 'success' : 'error'}`}>
-              {emailMsg}
-            </div>
-          )}
 
           <Input
             onChange={onStudentIDHandler}
@@ -345,13 +334,6 @@ function MyProfile(props) {
               {studentIDMsg}
             </div>
           )}
-
-          <Input
-            onChange={onUniNameHandler}
-            placeholder="대학교"
-            value={uniName}
-            type="text"
-          ></Input>
 
           <Input
             onChange={onDescriptionHandler}

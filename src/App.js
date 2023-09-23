@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import GmarketSansTTFBold from './fonts/GmarketSansTTFBold.ttf';
+import NanumSquareRoundBold from './fonts/NanumSquareRoundB.ttf';
+import NanumSquareRoundExtraBold from "./fonts/NanumSquareRoundEB.ttf"
 import HomePage from './components/views/HomePage/HomePage';
 import BlindDatePage from './components/views/BlindDatePage/BlindDateContainer';
 import MyProfile from './components/views/SignUpPage/MyProfile';
@@ -14,15 +15,21 @@ import UserPageMainContainer from './components/views/UserPage/UserPageMain/User
 import UserPageBlindDateContainer from './components/views/UserPage/UserPageBlindDate/UserPageBlindDateContainer';
 import UserPageMeetingContainer from './components/views/UserPage/UserPageMeeting/UserPageMeetingContainer';
 import FirstPage from './components/views/SignUpPage/FirstPage';
-import VerificationPage from './components/views/SignUpPage/VerificationPage';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
-        font-family: 'GmarketSansTTFBold';
-        src: local('GmarketSansTTFBold'), local('GmarketSansTTFBold');
+        font-family: 'NanumSquareRoundBold';
+        src: local('NanumSquareRoundB'), local('NanumSquareRoundB');
         font-style: normal;
-        src: url(${GmarketSansTTFBold}) format('truetype');
+        src: url(${NanumSquareRoundBold}) format('truetype');
   }
+
+@font-face {
+    font-family: 'NanumSquareRoundExtraBold';
+    src: local('NanumSquareRoundEB'), local('NanumSquareRoundEB');
+    font-style: normal;
+    src: url(${NanumSquareRoundExtraBold}) format('truetype');
+}
 
   body {
     width:100%;
@@ -55,7 +62,6 @@ function App() {
             }
           ></Route>
           <Route path='/signup' element={<FirstPage />}></Route>
-          <Route path='/verification' element={<VerificationPage />}></Route>
           <Route path="/myprofile" element={<MyProfile />}></Route>
           <Route path="/detailprofile" element={<DetailProfile />}></Route>
           <Route path="/find" element={<FindPasswordContainer />} />

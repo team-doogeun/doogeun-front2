@@ -2,19 +2,57 @@ import React from 'react'
 import styled from 'styled-components'
 import MypageSidemenuContainer from '../MyPageSidemenu/MyPageSidemenuContainer'
 
-const UserPageMeetingView = () => {
+const UserPageMeetingView = ({myMeetingRoom, enteringMeetingRoom,achieveMeetingRoom}) => {
   return (
     <UserPageMeetingViewContainer>  
         <MypageSidemenuContainer currentMenu="MyMeeting" />
         <MainContainer>
         <MyMeetingRoomContainer>
             <Title>내가 만든 미팅방</Title>
+            {
+              myMeetingRoom.map((item) => (
+                <MyMeetingRoomCardWrapper>
+                    <Card key={item.roomId}>
+                        <div>방 제목: {item.title}</div>
+                    </Card>
+                    <ButtonWrapper>
+                        <InfoButton>상세정보 보기</InfoButton>
+                    </ButtonWrapper>
+                </MyMeetingRoomCardWrapper>
+            ))
+            }
         </MyMeetingRoomContainer>
         <EnteringMeetingRoomContainer>
             <Title>내가 참여한 미팅방</Title>
+            {
+              enteringMeetingRoom.map((item) => (
+                <CardWrapper>
+                    <Card key={item.roomId}>
+                        <div>방 제목: {item.title}</div>
+                    </Card>
+
+                    <ButtonWrapper>
+                        <InfoButton>상세정보 보기</InfoButton>
+                    </ButtonWrapper>
+                </CardWrapper>
+            ))
+            }
         </EnteringMeetingRoomContainer>
         <AchieveRoomContainer>
             <Title>성사된 미팅방</Title>
+            {
+              achieveMeetingRoom.map((item) => (
+                <CardWrapper>
+                    <Card key={item.roomId}>
+                        <div>방 제목: {item.title}</div>
+                    </Card>
+
+                    <ButtonWrapper>
+                        <InfoButton>상세정보 보기</InfoButton>
+                    </ButtonWrapper>
+                </CardWrapper>
+            ))
+            }
         </AchieveRoomContainer>
         </MainContainer>
     </UserPageMeetingViewContainer>
@@ -35,10 +73,24 @@ const MainContainer = styled.div`
     flex-direction: column;
     width: 100%;
     gap: 20px;
+    margin-bottom: 10rem;
 `;
 
+const MyMeetingRoomCardWrapper = styled.div`
+    display: flex;
+    flex-direction: row;    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;  // to give space between cards
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+`
+
 const MyMeetingRoomContainer = styled.div`
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundBold";
     display: flex;
     flex-direction: column;
     border: 2px solid #e9e9e9;
@@ -51,7 +103,7 @@ const MyMeetingRoomContainer = styled.div`
 `
 
 const EnteringMeetingRoomContainer = styled.div`
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundBold";
     display: flex;
     flex-direction: column;
     border: 2px solid #e9e9e9;
@@ -60,11 +112,10 @@ const EnteringMeetingRoomContainer = styled.div`
     border-radius: 15px;
     padding: 2rem;
     flex-wrap: wrap;
-    justify-content: center;  
+    justify-content: space-between;
 `
 
 const AchieveRoomContainer = styled.div`
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
     display: flex;
     flex-direction: column;
     border: 2px solid #e9e9e9;
@@ -73,10 +124,11 @@ const AchieveRoomContainer = styled.div`
     border-radius: 15px;
     padding: 2rem;
     flex-wrap: wrap;
-    justify-content: center;  
+    justify-content: space-between;
 `
 
-const Title = styled.h2`
+const Title = styled.h4`
+    font-family: "NanumSquareRoundExtraBold";
 
 `
 
@@ -85,11 +137,12 @@ const CardWrapper = styled.div`
     flex-direction: row;    
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;  // to give space between cards
-    width: 100%;  // or adjust as required
+    width: 100%;
     padding: 15px;
     border-radius: 10px;
     align-items: center;
     gap: 10px;
+    justify-content: space-between;
 `
 
 const Card = styled.div`
@@ -97,21 +150,9 @@ const Card = styled.div`
     flex-direction: column;
     background-color: #fff;
     padding: 15px;
-    margin-bottom:5px;
+    justify-content: center;
+    align-items: center;
 `;
-
-const ProfilePhoto = styled.img`
-    width: 80px;
-    height: 80px;
-    margin-left: 10px;
-`;
-
-const ButtonWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-left: 160px;
-`
 
 const InfoButton = styled.button`
     border: none;
@@ -122,21 +163,12 @@ const InfoButton = styled.button`
     }
 `;
 
-const DoogeunButton = styled.button`
-    border: none;
-    padding: 8px 15px;
-    border-radius: 10px;
-    background-color: #ff2559;
-    color: #f3f3f3;
 
+const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 160px;
 `;
-
-const ChatingButton = styled.button`
-    border: none;
-    padding: 8px 15px;
-    border-radius: 10px;
-    background-color: #ff2559;
-    color: #f3f3f3;
-`
 
 export default UserPageMeetingView

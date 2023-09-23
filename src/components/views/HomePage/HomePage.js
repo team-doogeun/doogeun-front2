@@ -17,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
     top:0;
     background: #f5f5f5;
     box-shadow: none;
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
     margin-bottom: 20px;
   }
 
@@ -193,7 +193,7 @@ const HomePage = () => {
                   <MeetingButton>미팅</MeetingButton>
                 </Link>
               </ButtonContainer>
-              <ImgBanner1 src={banner1} alt="Banner 1" title="두근에서" />
+              <img src={banner1} alt="Banner 1" style={{ width: '100%', height: '80rem', objectFit: 'cover' }}/>
             </Banner>
             <Banner>
               <TextContainer>
@@ -208,7 +208,7 @@ const HomePage = () => {
                   <MeetingButton>미팅</MeetingButton>
                 </Link>
               </ButtonContainer>
-              <img src={banner2} alt="Banner 2" />
+              <img src={banner2} alt="Banner 2" style={{ width: '100%', height: '100rem', objectFit: 'cover' }}/>
             </Banner>
             <Banner>
               <TextContainer>
@@ -223,7 +223,7 @@ const HomePage = () => {
                   <MeetingButton>미팅</MeetingButton>
                 </Link>
               </ButtonContainer>
-              <img src={banner3} alt="Banner 3" />
+              <img src={banner3} alt="Banner 3" style={{  width: '100%', height: '70rem',objectFit: 'cover' }}/>
             </Banner>
           </Carousel>
         </Section>
@@ -297,23 +297,23 @@ const Main = styled.main`
   align-items: center;
   background: #ffffff;
   color: #ffffff;
+  font-family: "NanumSquareRoundExtraBold";
+
 `;
 
 const Banner = styled.div`
   width: 100%;
   height: calc(90vh - 100px);
-  background-color: transparent;
+  background-image: url(${props => props.imageUrl});
+  background-size: contain;
+  background-position: center;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  img {
-    max-width: 2000px;
-    max-height: 2000px;
-    object-fit: cover;
-  }
 `;
+
 
 const ImgBanner1 = styled.img`
   width: 1500px;
@@ -334,6 +334,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Section = styled.section`
+
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
@@ -341,7 +342,7 @@ const Section = styled.section`
   align-items: center;
 
   h2 {
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundExtraBold";
     font-size: 2rem;
     color: #252525;
   }
@@ -387,7 +388,7 @@ const SectionTwo = styled.section`
   animation: ${RightToLeft} 2.5s ease-in;
 
   h2 {
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundExtraBold";
     font-size: 1.8rem;
     color: #252525;
     opacity: 0;
@@ -456,7 +457,7 @@ const BlindDateButton = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: GmarketSansTTFBold, sans-serif, Arial;
+  font-family: "NanumSquareRoundExtraBold";
   font-size: 1rem;
   background-color: #fff;
   color: #ff493e;
@@ -476,7 +477,7 @@ const MeetingButton = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: GmarketSansTTFBold, sans-serif, Arial;
+  font-family: "NanumSquareRoundExtraBold";
   font-size: 1rem;
   background-color: #fff;
   color: #ff493e;
@@ -498,6 +499,8 @@ const GoToBlindDate = styled.button`
   font-weight: 700;
   font-size: 1.2rem;
   margin-top: 20px;
+  font-family: "NanumSquareRoundExtraBold";
+
 `;
 
 const SectionContainer = styled.div`
@@ -516,7 +519,7 @@ const TextContainer = styled.div`
   h2 {
     align-items: center;
     justify-content: center;
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundExtraBold";
     font-size: 3rem;
     color: #fff;
     text-align: center;
@@ -529,7 +532,7 @@ const TextContainer = styled.div`
     text-align: left;
     font-weight: 500;
     color: #fff;
-    font-family: GmarketSansTTFBold, sans-serif, Arial;
+    font-family: "NanumSquareRoundExtraBold";
   }
 `;
 

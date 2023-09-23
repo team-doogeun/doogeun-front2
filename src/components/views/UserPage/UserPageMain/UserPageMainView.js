@@ -7,17 +7,31 @@ const UserPageMainView = ({userInfo, changePassword}) => {
     <UserPageMainViewContainer>
         <MypageSidemenuContainer currentMenu="UserSetting" />
         <MainContainer>
-            <BasicInfo>
-                <p style={{padding: "20px", fontWeight: "700"}}>기본 정보</p>
-                <h3>{userInfo.name}님</h3>
-                <p>{userInfo.description}</p>
-                <p>{userInfo.uniName}</p>
-                <p>{userInfo.age}</p>
-                <p>{userInfo.gender}</p>
-
+        <BasicInfo>
+                <InfoTitle>기본 정보</InfoTitle>
+                <InfoRow>
+                    <label>이름:</label>
+                    <span>{userInfo.name}님</span>
+                </InfoRow>
+                <InfoRow>
+                    <label>자기소개:</label>
+                    <span>{userInfo.description}</span>
+                </InfoRow>
+                <InfoRow>
+                    <label>대학:</label>
+                    <span>{userInfo.uniName}</span>
+                </InfoRow>
+                <InfoRow>
+                    <label>나이:</label>
+                    <span>{userInfo.age}</span>
+                </InfoRow>
+                <InfoRow>
+                    <label>성별:</label>
+                    <span>{userInfo.gender}</span>
+                </InfoRow>
             </BasicInfo>
             <ChangePassword>
-                <p style={{padding: "20px", fontWeight: "700"}}>비밀번호 변경</p>
+                <h5 style={{padding: "20px", fontWeight: "700"}}>비밀번호 변경</h5>
                 <PasswordForm>
                 <PasswordInput>
                         <ChangePasswordBox placeholder="비밀번호"></ChangePasswordBox>
@@ -34,7 +48,10 @@ const UserPageMainView = ({userInfo, changePassword}) => {
 }
 
 const UserPageMainViewContainer = styled.div`
+    font-family: "NanumSquareRoundBold";
     display: flex;
+    justify-content: center; 
+    align-items: center; 
     min-height: 100vh;
     max-width: 1100px;
     margin: 0 auto;
@@ -42,7 +59,7 @@ const UserPageMainViewContainer = styled.div`
 
 
 const MainContainer = styled.div`
-    margin-top: 70px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -55,6 +72,27 @@ const BasicInfo = styled.div`
     width: 80%;
     height: 30rem;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+`;
+
+const InfoTitle = styled.h5`
+    padding: 20px 0;
+    font-weight: 700;
+`;
+
+const InfoRow = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+
+    label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
 `;
 
 const ChangePassword = styled.div`
@@ -109,6 +147,12 @@ const UserPasswordEditBtn = styled.button`
   margin-top: 103px;
 
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Transition 효과 추가 */
+
+  &:hover {
+    background-color: #ff4780; /* Hover 효과 */
+    transform: scale(1.05); /* Hover 효과 */
+  }
 `;
 
 
