@@ -202,11 +202,16 @@ function DetailProfile() {
     }
 
     try {
-      await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/users/signup`, formData).then((res) => {
-        window.localStorage.clear();
-        alert("회원가입이 완료되었습니다.");
-        navigator("/");
-      });
+      await axios
+        .post(
+          `http://${process.env.REACT_APP_SERVER_IP}/users/signup`,
+          formData
+        )
+        .then((res) => {
+          window.localStorage.clear();
+          alert("회원가입이 완료되었습니다.");
+          navigator("/");
+        });
     } catch (error) {
       console.error(error);
     }
@@ -590,7 +595,6 @@ function DetailProfile() {
                 </div>
               )}
 
-
               <Select
                 className="age"
                 placeholder="나이"
@@ -600,8 +604,6 @@ function DetailProfile() {
                 onChange={onIdealAgeHandler}
                 styles={customStyle}
               />
-
-              
 
               <Select
                 className="bodyType"

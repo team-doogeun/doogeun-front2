@@ -16,7 +16,7 @@ const SignInView = ({ loginSubmit, loginError, navigator }) => {
         {({ values, handleSubmit, handleChange }) => (
           <LoginWrapper>
             <LoginTitle>
-              <img src={Logo} />
+              <img src={Logo} alt="logo" />
               <> </>doogeun
             </LoginTitle>
             <form onSubmit={handleSubmit} autoComplete="off">
@@ -59,7 +59,7 @@ const SignInView = ({ loginSubmit, loginError, navigator }) => {
             <AdditionalBox>
               <span
                 onClick={() => {
-                  navigator("/myprofile");
+                  navigator("/signup");
                 }}
               >
                 회원가입
