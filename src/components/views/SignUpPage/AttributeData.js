@@ -47,15 +47,8 @@ const bodyTypeData = [
 const departmentData = [
   { value: "공학계열", label: "공학계열" },
   { value: "인문계열", label: "인문계열" },
-  { value: "사회과학대학", label: "사회과학대학" },
-  { value: "경영대학", label: "경영대학" },
-  { value: "문과대학", label: "문과대학" },
-  { value: "이과대학", label: "이과대학" },
-  { value: "건축대학", label: "건축대학" },
-  { value: "부동산과학원", label: "부동산과학원" },
-  { value: "KU융합과학기술원", label: "KU융합과학기술원" },
-  { value: "상허생명과학대학", label: "상허생명과학대학" },
-  { value: "수의과대학", label: "수의과대학" },
+  { value: "교육계열", label: "교육계열" },
+  { value: "자연계열", label: "자연계열" },
 ];
 
 const addressData = [

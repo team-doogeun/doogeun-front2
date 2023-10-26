@@ -1,14 +1,14 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import ProfileView from './ProfileView';
-import axios from 'axios';
-import { getJWTCookie, clearAllCookies } from '../../Api/loginApi';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import ProfileView from "./ProfileView";
+import axios from "axios";
+import { getJWTCookie, clearAllCookies } from "../../Api/loginApi";
 
 const ProfileContainer = ({ profileImageUrl }) => {
   const navigator = useNavigate();
-  const userName = getJWTCookie('name');
+  const userName = getJWTCookie("name");
 
-  const logoutHandler = async () => {
+  const logoutHandler = () => {
     clearAllCookies();
     localStorage.clear();
     window.location.reload();

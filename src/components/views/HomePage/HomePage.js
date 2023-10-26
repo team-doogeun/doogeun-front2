@@ -177,7 +177,6 @@ const HomePage = () => {
             infiniteLoop
             showThumbs={false}
             showStatus={false}
-            showArrows={false}
             interval={5000}
           >
             <Banner>
@@ -193,7 +192,11 @@ const HomePage = () => {
                   <MeetingButton>미팅</MeetingButton>
                 </Link>
               </ButtonContainer>
-              <img src={banner1} alt="Banner 1" style={{ width: '100%', height: '80rem', objectFit: 'cover' }}/>
+              <img
+                src={banner1}
+                alt="Banner 1"
+                style={{ width: "100%", height: "80rem", objectFit: "cover" }}
+              />
             </Banner>
             <Banner>
               <TextContainer>
@@ -208,7 +211,11 @@ const HomePage = () => {
                   <MeetingButton>미팅</MeetingButton>
                 </Link>
               </ButtonContainer>
-              <img src={banner2} alt="Banner 2" style={{ width: '100%', height: '100rem', objectFit: 'cover' }}/>
+              <img
+                src={banner2}
+                alt="Banner 2"
+                style={{ width: "100%", height: "100rem", objectFit: "cover" }}
+              />
             </Banner>
             <Banner>
               <TextContainer>
@@ -223,7 +230,11 @@ const HomePage = () => {
                   <MeetingButton>미팅</MeetingButton>
                 </Link>
               </ButtonContainer>
-              <img src={banner3} alt="Banner 3" style={{  width: '100%', height: '70rem',objectFit: 'cover' }}/>
+              <img
+                src={banner3}
+                alt="Banner 3"
+                style={{ width: "100%", height: "70rem", objectFit: "cover" }}
+              />
             </Banner>
           </Carousel>
         </Section>
@@ -298,22 +309,19 @@ const Main = styled.main`
   background: #ffffff;
   color: #ffffff;
   font-family: "NanumSquareRoundExtraBold";
-
 `;
 
 const Banner = styled.div`
   width: 100%;
   height: calc(90vh - 100px);
-  background-image: url(${props => props.imageUrl});
+  background-image: url(${(props) => props.imageUrl});
   background-size: contain;
   background-position: center;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;
-
 
 const ImgBanner1 = styled.img`
   width: 1500px;
@@ -334,7 +342,6 @@ const ButtonContainer = styled.div`
 `;
 
 const Section = styled.section`
-
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
@@ -500,7 +507,6 @@ const GoToBlindDate = styled.button`
   font-size: 1.2rem;
   margin-top: 20px;
   font-family: "NanumSquareRoundExtraBold";
-
 `;
 
 const SectionContainer = styled.div`

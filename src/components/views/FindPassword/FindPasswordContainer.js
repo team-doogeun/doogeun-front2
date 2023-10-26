@@ -1,7 +1,7 @@
-import React from 'react';
-import FindPasswordView from './FindPasswordView';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import FindPasswordView from "./FindPasswordView";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const FindPasswordContainer = () => {
   // 1. 이메일 -> 이메일로 임시번호 발송
@@ -9,10 +9,10 @@ const FindPasswordContainer = () => {
   // 2. 비밀번호는 임시번호로 바뀜
 
   const navigator = useNavigate();
-  const url = 'http://localhost:8080/find-password';
+  const url = "http://localhost:8080/find-password";
   const submitEmail = async () => {
     try {
-      navigator('/');
+      navigator("/");
     } catch (error) {
       console.log(error);
     }
